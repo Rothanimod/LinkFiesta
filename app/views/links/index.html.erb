@@ -2,6 +2,12 @@
   <div class="row">
     <div class="col-md-6-offset-3">
       <h1>LinkFiesta test header</h1>
+<!-- we check if theres a logged user then we show the form for link -->
+      <%if current_user %>
+
+      <%end%>
+
+<!-- list all the links  -->
       <% @links.each do |link|%>
 
         <%=link.title%>
@@ -9,7 +15,7 @@
         <%=link.link%>
 
         <%=link.description%>
-        
+
       <%end%>
     </div>
   </div>

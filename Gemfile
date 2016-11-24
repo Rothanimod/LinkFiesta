@@ -36,9 +36,11 @@ gem 'annotate'
 #authentication with Omniauth
 gem 'omniauth-facebook'
 
-
-#bootstrap - sass gem
+#bootstrap - sass gem for css styles
 gem 'bootstrap-sass'
+
+# link thumbnailer to generate previews of the links
+gem 'link_thumbnailer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

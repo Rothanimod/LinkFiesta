@@ -1,20 +1,46 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6-offset-3">
-      <h1>LinkFiesta test header</h1>
+    <div class="col-md-4-offset-4">
 <!-- we check if theres a logged user then we show the form for link -->
+<!-- The form goes here -->
       <%if current_user %>
+            <h1>Publish a link</h1>
+            <%= form_for(@link) do |link| %>
+              <% if @link.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@link.errors.count, "error")%> prohibited this @link from being saved: </h2>
+                  <ul>
+                    <% @link.errors.full_messages.each do |message| %>
+                      <li><%= message%> </li>
+                    <%end%>
+                  </ul>
+                </div>
+              <%end%>
 
+            <div class="form-group">
+              <div class="field">
+                <%= link.label :link %>
+                <%= link.text_field :link, class: 'form-control' %>
+              </div>
+              <div class="actions">
+                <%= link.submit 'Submit Link', class: 'btn btn-success'%>
+              </div>
+            </div>
+          <%end%>
       <%end%>
 
 <!-- list all the links  -->
       <% @links.each do |link|%>
 
-        <%=link.title%>
+        <%  linkobj = LinkThumbnailer.generate(link.link)%>
 
-        <%=link.link%>
+        <%= link.title %>
 
-        <%=link.description%>
+        <%= link.link %>
+
+        <%= link.description %>
+
+        <%= linkobj.images.first.src.to_s%>
 
       <%end%>
     </div>

@@ -13,6 +13,11 @@
 #
 
 class User < ApplicationRecord
+  #relations
+  has_many :votes
+  has_many :links
+
+  #omniauth helper
   def self.from_omniauth(auth)
       #the commented where didnt really work, had to be replaced for the existing one to avoid conflicts
       #where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

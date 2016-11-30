@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130013212) do
+ActiveRecord::Schema.define(version: 20161130014115) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20161130013212) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "link_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["link_id"], name: "index_votes_on_link_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
 end

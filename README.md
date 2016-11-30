@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+gonna use this readme as a TODO list for now
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+* Define if categories are going to get fetched from an additional comment field
 
-* Configuration
+* Generate a comment migration if thats the case
 
-* Database creation
+* Implement how  categories are going to get extracted from the comment
 
-* Database initialization
+* how are we going to make those associations.
 
-* How to run the test suite
+* Define how a link should look like (front wise ofc)
 
-* Services (job queues, cache servers, search engines, etc.)
+* Categories list on the side
 
-* Deployment instructions
+* Search button for link, it ll search for title and description of the link
 
-* ...
+* Search filter for categories (if the crazy changes get implemented)

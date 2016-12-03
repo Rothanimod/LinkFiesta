@@ -18,4 +18,5 @@ class Link < ApplicationRecord
   has_many :votes
   has_many :link_categories
   has_many :categories, through: :link_categories
+  validates_presence_of :link, :title, :description
 end
